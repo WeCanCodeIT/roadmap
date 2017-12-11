@@ -326,22 +326,6 @@ div#timeline_container > div.week > ul > li:nth-child(even) div.event_date {text
 div#timeline_container > div.week > ul > li:hover div.event_date,div#timeline_container > ul li.active div.event_date {opacity:0.9;}
 div#timeline_container > div.week > ul > li:nth-child(odd) div.event_date {right:60px;}
 div#timeline_container > div.week > ul > li:nth-child(even) div.event_date {left:60px;}
-
-div#instructions_container {
-	position:fixed;
-	padding:2em;
-	width:300px;
-	bottom:2em;
-	right:2em;
-	line-height:1.4em;
-	background:#FDFDBD;
-	border-radius:10px;
-	border:1px solid #DDDBDA;
-	z-index:40;
-	font-size:0.9em;
-	color:black;
-	line-height:1.6em;
-}
 div#info_container{
 	position:fixed;
 	bottom:2em;

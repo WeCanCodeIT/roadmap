@@ -74,7 +74,7 @@ $(document).on('scroll',function(){
 
 
 $(document).on('click','div#info_container',function(){
-	$('div#instructions_container').fadeIn('fast');
+
 	$('div#info_container').fadeOut('fast');
 });
 

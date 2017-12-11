@@ -1,30 +1,3 @@
-//=====================================//
-//======== Font license info  =========//
-//=====================================//
-/*    
-## Entypo
-   Copyright (C) 2012 by Daniel Bruce
-   Author:    Daniel Buce
-   License:   SIL (http://scripts.sil.org/OFL)
-   Homepage:  http://www.entypo.com
-
-## Font Awesome
-   Copyright (C) 2012 by Dave Gandy
-   Author:    Dave Gandy
-   License:   CC BY 3.0 (http://creativecommons.org/licenses/by/3.0/)
-   Homepage:  https://fortawesome.github.com/Font-Awesome/
-
-## Web Symbols
-   Copyright (c) 2011 by Just Be Nice studio. All rights reserved.
-   Author:    Just Be Nice studio
-   License:   SIL (http://scripts.sil.org/OFL)
-   Homepage:  http://www.justbenicestudio.com/studio/websymbols/
-*/
-//=====================================//
-
-$(document).ready(function(){
-	
-});
 $('nav ul#main_nav').on('click','li',function(){
 	var $type=$(this).attr('data-title');
 	$("nav ul#main_nav li").removeClass("active")
@@ -53,9 +26,6 @@ $('nav ul#main_nav').on('click','li',function(){
 
 $(document).on('scroll',function(){
 
-	$('div#info_container').fadeIn('fast');
-
-
 	$("div.week").each(function( index ) {
 		var week = $(this);
 		var position = week.position().top - $(window).scrollTop();
@@ -65,7 +35,6 @@ $(document).on('scroll',function(){
 			weekLI.addClass("active");
 		} else {
 			weekLI.removeClass("active");
-	
 		}
 	});
 
@@ -73,10 +42,35 @@ $(document).on('scroll',function(){
 });
 
 
-$(document).on('click','div#info_container',function(){
-
-	$('div#info_container').fadeOut('fast');
+$(document).on('click','div#today',function(){
+	var today = new Date();
+	var currentDate = today.getFullYear().toString() + (today.getMonth()+1) +today.getDate();
+	//currentDate=20180319;
+	currentDate = parseInt(currentDate);
+	var index = getDateIndex(currentDate);
+	index = recalculateIndex(index);
+	scrollTo("h2.week",index);
 });
 
+function getDateIndex(currentDate){
+	var weekIndex = 0;
+	$("h2.week").each(function(index){
+		var weekDate = parseInt($(this).data("date"));
+		weekIndex = index;
+		if(weekDate > currentDate){
+			return false;
+		}
+	});
+	return weekIndex;
+}
 
+function scrollTo(el,index){
+	$('html, body').animate({
+		scrollTop: $(el).eq(index).offset().top
+	}, 2000);
+}
 
+function recalculateIndex(index){
+	//computing index -> stay inbounds
+	return (index>0 && index < $("h2.week").length-1 ?index-1:index); 
+}

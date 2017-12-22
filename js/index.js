@@ -24,14 +24,25 @@ $('nav ul#main_nav').on('click','li',function(){
 			
 });
 
+$(document).ready(function(){
+	console.log("#roadmap_header height: " + $("#roadmap_header").outerHeight(true));
+});
 $(document).on('scroll',function(){
 
 	$("div.week").each(function( index ) {
 		var week = $(this);
 		var position = week.position().top - $(window).scrollTop();
+//get size of a block to show
+
+		/*console.log("week.position().top:" + week.position().top);
+		console.log("$(window).scrollTop()" + $(window).scrollTop());
+		console.log("timeline top" + $("div#timeline_container").scrollTop());
+		*/
+		console.log("height " + index + ": " + week.outerHeight(true));
+		console.log("position " + index + ": " + position);
 		var weekLI = week.children("ul").children("li");
 		//try and remove fixed positions below and work from current week size. (next week offset - current week offset?)
-		if (position <= 150 && position >=-150) {
+		if (position <= -312 && position >=-671) {
 			weekLI.addClass("active");
 		} else {
 			weekLI.removeClass("active");

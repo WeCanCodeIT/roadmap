@@ -7,98 +7,88 @@
 	-moz-box-sizing:border-box;
 	box-sizing:border-box;
 }
-body {
-	background:#ebe7e4;
-	color:#6d6b6a;
-	font-size:13px;
-	font-family:helvetica,arial,sans-serif;
-	overflow-y:scroll;
-}
-body > header {
+
+ #roadmap_header {
 	width:100%;
-	position:fixed;
+	position:relative;
 	z-index:30;
-	background:#E0DCD9;
-	border-bottom:1px solid #d5d1cf;
 	box-shadow:0 1px 1px white;
-	top:0;
-	left:0;
+	color: #AAA;
 }
 
-body > header nav {
+#roadmap_header nav {
 	width:960px;
 	margin:0 auto;
 	overflow:hidden;
 }
-body > header nav ul {
+#roadmap_header nav ul {
 	margin:0 0 0 -65px;
 	padding:0;
 	text-align:center;
 	font-size: 1em;
 }
-body > header nav li {
+#roadmap_header nav li {
 	display:inline-block;
 	cursor:pointer;
-	border-left:1px solid #ebe7e4;
-	border-top:1px solid #E0DCD9;
 	box-shadow:-1px 0px 1px #d5d1cf;
 	padding:1.2em;
 	font-size:18px;
 }
-body > header nav li:hover {
+#roadmap_header nav li:hover {
 	background:#d5d1cf;
 }
-body > header nav li:first-child {
+#roadmap_header nav li:first-child {
 	border-left:1px solid #E0DCD9;
 	box-shadow:-1px 0px 1px #E0DCD9;
 	text-shadow:1px 1px 1px #fff;
 }
-body > header nav li:active,body > header nav li.active {
+#roadmap_header nav li:active,#roadmap_header nav li.active {
 	color:white;
+	background-color: #CCC;
 }
-body > header nav li.all:active,body > header nav li.all.active {
+#roadmap_header nav li.all:active,#roadmap_header nav li.all.active {
 	text-shadow:1px 1px 1px #444;
 }
 
-body > header nav .fa-graduation-cap:active, li.active svg.fa-graduation-cap{
+#roadmap_header nav .fa-graduation-cap:active, li.active svg.fa-graduation-cap{
 	color:#da2368;
 }
-body > header nav .fa-briefcase:active, li.active svg.fa-briefcase{
+#roadmap_header nav .fa-briefcase:active, li.active svg.fa-briefcase{
 	color:#f26722;
 	
 }
-body > header nav .fa-cloud:active, li.active svg.fa-cloud{
+#roadmap_header nav .fa-cloud:active, li.active svg.fa-cloud{
 	color:#429fd7;
 }
-body > header nav .fa-info-circle:active, li.active svg.fa-info-circle{
+#roadmap_header nav .fa-info-circle:active, li.active svg.fa-info-circle{
 	color:#5dbb46;
 }
 
-body > header nav li.fa-graduation-cap:active,body > header nav li.fa-graduation-cap.active {
+#roadmap_header nav li.fa-graduation-cap:active,#roadmap_header nav li.fa-graduation-cap.active {
 	background:#da2368;
 	border-left:1px solid #bf1f75;
 	border-top:1px solid #bf1f75;
 	box-shadow:none;
 }
-body > header nav li.fa-briefcase:active,body > header nav li.fa-briefcase.active {
+#roadmap_header nav li.fa-briefcase:active,#roadmap_header nav li.fa-briefcase.active {
 	background:#f26722;
 	border-left:1px solid #B85307;
 	border-top:1px solid #B85307;
 	box-shadow:none;
 }
-body > header nav li.icon-star-1:active,body > header nav li.icon-star-1.active {
+#roadmap_header nav li.icon-star-1:active,#roadmap_header nav li.icon-star-1.active {
 	background:#5E6297;
 	border-left:1px solid #333;
 	border-top:1px solid #333;
 	box-shadow:none;
 }
-body > header nav li.icon-user:active,body > header nav li.icon-user.active {
+#roadmap_header nav li.icon-user:active,#roadmap_header nav li.icon-user.active {
 	background:#454545;
 	border-left:1px solid #333;
 	border-top:1px solid #333;
 	box-shadow:none;
 }
-body > header nav ul#nav_ctrl {
+#roadmap_header nav ul#nav_ctrl {
 	position:absolute;
 	top:0;
 	right:0;
@@ -108,12 +98,13 @@ div#timeline_container {
 	width:960px;
 	margin:120px auto;
 	position:relative;
+
 }
-div#timeline_container header {
+div#timeline_container #roadmap_header {
 	position:relative;
 	z-index:20;
 }
-div#timeline_container header figure {
+div#timeline_container #roadmap_header figure {
 	width:200px;
 	height:200px;
 	border-radius:50%;
@@ -123,7 +114,7 @@ div#timeline_container header figure {
 	margin:0 auto;
 	position:relative;
 }
-div#timeline_container header figure img {
+div#timeline_container #roadmap_header figure img {
     display: block;
     margin: 0;
     position: absolute;
@@ -131,7 +122,7 @@ div#timeline_container header figure img {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-div#timeline_container header h1 {
+div#timeline_container #roadmap_header h1 {
 	position:absolute;
 	top:20px;
 	right:80px;
@@ -140,7 +131,7 @@ div#timeline_container header h1 {
 	text-shadow:2px 2px 1px #fff;
 	font-weight:normal;
 }
-div#timeline_container header div {
+div#timeline_container #roadmap_header div {
 	position:absolute;
 	top:120px;
 	right:80px;
@@ -163,6 +154,7 @@ div#timeline_container > div.week >  ul {
 	margin:0 auto;
 	padding:6em 0 0;
 	list-style:none;    
+	color: #AAA;
 }
 div#timeline_container > div.week > ul:after {
 	content:"";
